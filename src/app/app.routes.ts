@@ -1,3 +1,8 @@
+// Rutas de la aplicación.
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'issues', loadComponent: () => import('./pages/issues-list/issues-list-page.component') },
+  { path: 'issue/:number', loadComponent: () => import('./pages/issue/issue.component') },
+  { path: '**', redirectTo: 'issues' },
+];

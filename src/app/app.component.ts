@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+// Angular.
 import { RouterOutlet } from '@angular/router';
 
+// Componentes.
+import { Component } from '@angular/core';
+
+// Librerías de terceros.
+import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
+
 @Component({
+  imports: [RouterOutlet, AngularQueryDevtools],
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  styleUrl: './app.component.css',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'tanstack-query-github-issues-backup';
+  title = 'github-issues';
 }

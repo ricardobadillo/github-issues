@@ -1,0 +1,10 @@
+<div class="flex flex-wrap gap-2 items-center justify-center">
+  @for (label of labels(); track label.id) {
+    <div
+      class="border cursor-pointer p2 p-1 rounded-md hover:bg-slate-950"
+      [ngStyle]="{ 'border-color': '#' + label.color }"
+    >
+      {{ label.name }}
+    </div>
+  }
+</div>

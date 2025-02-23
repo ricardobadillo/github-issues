@@ -1,4 +1,7 @@
+// Angular.
 import { TestBed } from '@angular/core/testing';
+
+// Componentes.
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -14,16 +17,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'tanstack-query-github-issues-backup' title`, () => {
+  it(`should have the 'github-issues' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tanstack-query-github-issues-backup');
+    expect(app.title).toEqual('github-issues');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, tanstack-query-github-issues-backup');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, github-issues');
   });
 });
