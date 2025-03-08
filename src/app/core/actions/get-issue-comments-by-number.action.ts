@@ -24,6 +24,6 @@ export const getIssueCommentsByNumber = async (issueNumber: string): Promise<Arr
     return issues;
 
   } catch (error) {
-    throw "Can't load issues";
+    throw `Can't load issues ${issueNumber}`;
   }
 };
