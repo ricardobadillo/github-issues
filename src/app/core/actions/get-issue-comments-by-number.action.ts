@@ -10,7 +10,7 @@ import { environment } from "../../../environments/environment.development";
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;
 
-export const getIssueCommentsByNumber = async (issueNumber: string): Promise<GitHubIssue[]> => {
+export const getIssueCommentsByNumber = async (issueNumber: string): Promise<Array<GitHubIssue>> => {
   await sleep(1500);
 
   try {

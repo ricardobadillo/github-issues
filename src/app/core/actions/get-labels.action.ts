@@ -10,7 +10,7 @@ import { environment } from "../../../environments/environment.development";
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;
 
-export const getLabels = async (): Promise<GitHubLabel[]> => {
+export const getLabels = async (): Promise<Array<GitHubLabel>> => {
   await sleep(1500);
 
   try {

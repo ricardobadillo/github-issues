@@ -18,7 +18,7 @@ import { IssueService } from '../../core/services/issue.service';
   standalone: true,
   templateUrl: './issue.component.html',
 })
-export default class IssuePageComponent {
+export default class IssueComponent {
   private issueService = inject(IssueService);
   private route = inject(ActivatedRoute);
 

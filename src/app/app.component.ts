@@ -4,11 +4,8 @@ import { RouterOutlet } from '@angular/router';
 // Componentes.
 import { Component } from '@angular/core';
 
-// Librerías de terceros.
-import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
-
 @Component({
-  imports: [RouterOutlet, AngularQueryDevtools],
+  imports: [RouterOutlet],
   selector: 'app-root',
   standalone: true,
   styleUrl: './app.component.css',
