@@ -32,7 +32,7 @@
 
   <div class="col-span-2 flex flex-col mt-4">
     @for (issue of issuesQuery.data(); track issue.id) {
-      <issue-item [issue]="issue" />
+      <app-issue-item [issue]="issue" />
     } @empty {
       @if (issuesQuery.isLoading()) {
         <p>Cargando issues</p>
@@ -46,7 +46,7 @@
     @if (labelsQuery.isLoading()) {
       <p>Estamos cargando</p>
     } @else {
-      <issues-labels-selector [labels]="labelsQuery.data() ?? []" />
+      <app-issues-labels-selector [labels]="labelsQuery.data() ?? []" />
     }
   </div>
 </section>

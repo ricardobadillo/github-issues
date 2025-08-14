@@ -11,7 +11,7 @@ import { IssueService } from '../../core/services/issue.service';
 
 @Component({
   imports: [NgStyle, RouterLink],
-  selector: 'issue-item',
+  selector: 'app-issue-item',
   standalone: true,
   templateUrl: './issue-item.component.html',
 })

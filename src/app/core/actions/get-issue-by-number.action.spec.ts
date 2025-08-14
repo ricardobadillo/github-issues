@@ -20,6 +20,8 @@ describe('Get issue by number action', () => {
     spyOn(window, 'fetch').and.resolveTo(issueResponse);
 
     const issue = await getIssueByNumber(issueNumber);
+    console.log(issue);
+
     expect(window.fetch).toHaveBeenCalledWith(requestUrl, {
       headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
     });
@@ -35,6 +37,8 @@ describe('Get issue by number action', () => {
 
     try {
       const issue = await getIssueByNumber(issueNumber);
+      console.log(issue);
+
       expect(true).toBeFalse();
     } catch (error) {
       expect(error).toBe(`Can't load issue ${issueNumber}`);

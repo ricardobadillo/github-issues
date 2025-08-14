@@ -29,6 +29,7 @@ describe('getIssueComments', () => {
     spyOn(window, 'fetch').and.resolveTo(issueCommentsResponse);
 
     const comments = await getIssueCommentsByNumber(issueNumber);
+    console.log(comments);
 
     expect(window.fetch).toHaveBeenCalledWith(requestUrl, {
       headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
@@ -45,6 +46,7 @@ describe('getIssueComments', () => {
 
     try {
       const comments = await getIssueCommentsByNumber(issueNumber);
+      console.log(comments);
       expect(true).toBeFalse();
     } catch (error) {
       expect(error).toBe(`Can't load issues ${issueNumber}`);

@@ -1,7 +1,7 @@
 export interface GitHubIssue {
   active_lock_reason: null;
   assignee: User | null;
-  assignees: Array<User>;
+  assignees: User[];
   author_association: AuthorAssociation;
   body: null | string;
   closed_at: null;
@@ -13,7 +13,7 @@ export interface GitHubIssue {
   html_url: string;
   id: number;
   labels_url: string;
-  labels: Array<Label>;
+  labels: Label[];
   locked: boolean;
   milestone: Milestone;
   node_id: string;

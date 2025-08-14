@@ -12,8 +12,8 @@ const GITHUB_TOKEN = environment.gitHubToken;
 
 export const getIssues = async (
   state: State = State.All,
-  selectedLabels: Array<string>,
-): Promise<Array<GitHubIssue>> => {
+  selectedLabels: string[],
+): Promise<GitHubIssue[]> => {
   await sleep(1500);
 
   const params = new URLSearchParams();
@@ -30,9 +30,10 @@ export const getIssues = async (
 
     if (!response.ok) throw "Can't load issues";
 
-    const issues: Array<GitHubIssue> = await response.json();
+    const issues: GitHubIssue[] = await response.json();
     return issues;
   } catch (error) {
+    console.log(error);
     throw "Can't load issues";
   }
 };

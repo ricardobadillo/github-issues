@@ -10,12 +10,12 @@ import { IssuesService } from '../../core/services/issues.service';
 
 @Component({
   imports: [NgStyle],
-  selector: 'issues-labels-selector',
+  selector: 'app-issues-labels-selector',
   standalone: true,
   templateUrl: './labels-selector.component.html',
 })
 export class LabelsSelectorComponent {
-  public labels = input.required<Array<GitHubLabel>>();
+  public labels = input.required<GitHubLabel[]>();
   public issuesService = inject(IssuesService);
 
   public isSelected(labelName: string): boolean {

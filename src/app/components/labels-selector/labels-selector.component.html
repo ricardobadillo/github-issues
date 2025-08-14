@@ -2,6 +2,8 @@
   @for (label of labels(); track label.id) {
     <div
       class="border cursor-pointer p2 p-1 rounded-md hover:bg-slate-950"
+      role="button"
+      tabindex="0"
       [ngStyle]="{ 'border-color': '#' + label.color }"
       (click)="onToggleLabel(label.name)"
       [class.selected-label]="isSelected(label.name)"

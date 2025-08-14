@@ -9,7 +9,7 @@ import { GitHubIssue } from '../../core/models';
 
 @Component({
   imports: [MarkdownModule],
-  selector: 'issue-comment',
+  selector: 'app-issue-comment',
   standalone: true,
   templateUrl: './issue-comment.component.html',
 })

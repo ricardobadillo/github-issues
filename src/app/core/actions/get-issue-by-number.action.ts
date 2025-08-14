@@ -25,6 +25,7 @@ export const getIssueByNumber = async (
     const issue: GitHubIssue = await response.json();
     return issue;
   } catch (error) {
+    console.log(error);
     throw `Can't load issue ${issueNumber}`;
   }
 };
