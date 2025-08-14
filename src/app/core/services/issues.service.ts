@@ -21,10 +21,13 @@ export class IssuesService {
   }));
 
   public issuesQuery = injectQuery(() => ({
-    queryKey: ['issues', {
-      state: this.selectedState(),
-      selectedLabels: [...this.selectedLabels()],
-    }],
+    queryKey: [
+      'issues',
+      {
+        state: this.selectedState(),
+        selectedLabels: [...this.selectedLabels()],
+      },
+    ],
     queryFn: () => getIssues(this.selectedState(), [...this.selectedLabels()]),
   }));
 

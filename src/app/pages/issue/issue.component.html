@@ -1,4 +1,6 @@
-<h1> Issue number: <small>{{ issueNumber() }}</small> </h1>
+<h1>
+  Issue number: <small>{{ issueNumber() }}</small>
+</h1>
 <a class="block mt-2" routerLink="/">Regresar</a>
 
 @if (issueQuery.data() === undefined) {
@@ -16,4 +18,3 @@
     <p>No hay comentarios</p>
   }
 }
-

@@ -1,11 +1,11 @@
 // Modelos.
-import { GitHubLabel } from "../models";
+import { GitHubLabel } from '../models';
 
 // Utils.
-import { sleep } from "../helpers";
+import { sleep } from '../helpers';
 
 // Variables de entorno.
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;
@@ -22,7 +22,6 @@ export const getLabels = async (): Promise<Array<GitHubLabel>> => {
 
     const labels: Array<GitHubLabel> = await response.json();
     return labels;
-
   } catch (error) {
     throw "Can't load labels";
   }

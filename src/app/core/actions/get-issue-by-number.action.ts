@@ -1,16 +1,18 @@
 // Modelos.
-import { GitHubIssue } from "../models";
+import { GitHubIssue } from '../models';
 
 // Utils.
-import { sleep } from "../helpers";
+import { sleep } from '../helpers';
 
 // Variables de entorno.
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;
 
-export const getIssueByNumber = async (issueNumber: string): Promise<GitHubIssue> => {
+export const getIssueByNumber = async (
+  issueNumber: string,
+): Promise<GitHubIssue> => {
   await sleep(1500);
 
   try {
@@ -22,7 +24,6 @@ export const getIssueByNumber = async (issueNumber: string): Promise<GitHubIssue
 
     const issue: GitHubIssue = await response.json();
     return issue;
-
   } catch (error) {
     throw `Can't load issue ${issueNumber}`;
   }

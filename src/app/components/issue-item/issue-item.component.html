@@ -1,7 +1,7 @@
 <div
   class="bg-slate-900 border flex items-center mb-5 px-2 py-3 rounded-md hover:bg-slate-800"
   (mouseenter)="prefetchData()"
-  >
+>
   @if (isOpen) {
     <i class="fa-folder-open fa-regular text-green-500"></i>
   } @else {
@@ -20,7 +20,8 @@
 
     <div class="flex flex-wrap gap-2 mt-4">
       @for (label of issue().labels; track label.id) {
-        <span class="px-2 py-1 rounded-md text-white text-xs"
+        <span
+          class="px-2 py-1 rounded-md text-white text-xs"
           [ngStyle]="{ border: '1px solid #' + label.color }"
         >
           {{ label.name }}

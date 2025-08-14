@@ -1,8 +1,8 @@
 // Utils.
-import { getIssueCommentsByNumber } from "./get-issue-comments-by-number.action";
+import { getIssueCommentsByNumber } from './get-issue-comments-by-number.action';
 
 // Variables de entorno.
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 interface GitHubComment {
   id: number;
@@ -50,5 +50,4 @@ describe('getIssueComments', () => {
       expect(error).toBe(`Can't load issues ${issueNumber}`);
     }
   });
-})
-
+});

@@ -1,14 +1,17 @@
 // Angular.
-import { TestBed } from "@angular/core/testing";
+import { TestBed } from '@angular/core/testing';
 
 // Librerías de terceros.
-import { provideTanStackQuery, QueryClient } from "@tanstack/angular-query-experimental";
+import {
+  provideTanStackQuery,
+  QueryClient,
+} from '@tanstack/angular-query-experimental';
 
 // Modelos.
-import { GitHubIssue, State } from "../models";
+import { GitHubIssue, State } from '../models';
 
 // Servicios.
-import { IssuesService } from "./issues.service";
+import { IssuesService } from './issues.service';
 
 describe('IssuesService', () => {
   const queryClient = new QueryClient();
@@ -18,8 +21,8 @@ describe('IssuesService', () => {
     TestBed.configureTestingModule({
       providers: [provideTanStackQuery(queryClient)],
       teardown: {
-        destroyAfterEach: false
-      }
+        destroyAfterEach: false,
+      },
     });
 
     service = TestBed.inject(IssuesService);
@@ -76,7 +79,9 @@ describe('IssuesService', () => {
     const { data } = await service.issuesQuery.refetch();
 
     data?.forEach((issue: GitHubIssue) => {
-      const hasLabel = issue.labels.some(label => label.name === 'Accessibility');
+      const hasLabel = issue.labels.some(
+        (label) => label.name === 'Accessibility',
+      );
       expect(hasLabel).toBeTrue();
     });
   });

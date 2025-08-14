@@ -25,8 +25,8 @@ export default class IssueComponent {
   public issueNumber = toSignal<string>(
     this.route.paramMap.pipe(
       map((params: ParamMap) => params.get('number') ?? ''),
-      tap((number: string) => this.issueService.setIssueNumber(number))
-    )
+      tap((number: string) => this.issueService.setIssueNumber(number)),
+    ),
   );
 
   public issueCommentsQuery = this.issueService.issueCommentsQuery;

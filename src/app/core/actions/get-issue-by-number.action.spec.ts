@@ -1,8 +1,8 @@
 // Utils.
-import { getIssueByNumber } from "./get-issue-by-number.action";
+import { getIssueByNumber } from './get-issue-by-number.action';
 
 // Variables de entorno.
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;

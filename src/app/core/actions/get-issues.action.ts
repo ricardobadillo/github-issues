@@ -1,26 +1,26 @@
 // Modelos.
-import { GitHubIssue, State } from "../models";
+import { GitHubIssue, State } from '../models';
 
 // Utils.
-import { sleep } from "../helpers";
+import { sleep } from '../helpers';
 
 // Variables de entorno.
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = environment.gitHubToken;
 
 export const getIssues = async (
   state: State = State.All,
-  selectedLabels: Array<string>
+  selectedLabels: Array<string>,
 ): Promise<Array<GitHubIssue>> => {
   await sleep(1500);
 
   const params = new URLSearchParams();
-  params.append("state", state);
+  params.append('state', state);
 
   if (selectedLabels.length > 0) {
-    params.append("labels", selectedLabels.join(","));
+    params.append('labels', selectedLabels.join(','));
   }
 
   try {
@@ -32,7 +32,6 @@ export const getIssues = async (
 
     const issues: Array<GitHubIssue> = await response.json();
     return issues;
-
   } catch (error) {
     throw "Can't load issues";
   }

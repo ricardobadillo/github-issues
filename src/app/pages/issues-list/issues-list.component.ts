@@ -29,11 +29,12 @@ export default class IssuesListComponent {
   }
 
   public onChangeState(newState: string) {
-    const state = {
-      'all': State.All,
-      'open': State.Open,
-      'closed': State.Closed,
-    }[newState] ?? State.All;
+    const state =
+      {
+        all: State.All,
+        open: State.Open,
+        closed: State.Closed,
+      }[newState] ?? State.All;
 
     this.issuesService.showIssuesByState(state);
   }
