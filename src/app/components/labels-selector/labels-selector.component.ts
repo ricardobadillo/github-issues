@@ -1,6 +1,11 @@
 // Angular.
 import { NgStyle } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 
 // Modelos.
 import { GitHubLabel } from '../../core/models';
@@ -9,6 +14,7 @@ import { GitHubLabel } from '../../core/models';
 import { IssuesService } from '../../core/services/issues.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgStyle],
   selector: 'app-issues-labels-selector',
   standalone: true,

@@ -1,6 +1,11 @@
 // Angular.
 import { NgStyle } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 // Modelos.
@@ -10,6 +15,7 @@ import { GitHubIssue, State } from '../../core/models';
 import { IssueService } from '../../core/services/issue.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgStyle, RouterLink],
   selector: 'app-issue-item',
   standalone: true,

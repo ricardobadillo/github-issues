@@ -1,5 +1,5 @@
 // Angular.
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 // Librerías de terceros.
 import { MarkdownModule } from 'ngx-markdown';
@@ -8,6 +8,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { GitHubIssue } from '../../core/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MarkdownModule],
   selector: 'app-issue-comment',
   standalone: true,

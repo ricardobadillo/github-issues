@@ -1,5 +1,5 @@
 // Angular.
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 
@@ -13,6 +13,7 @@ import { map, tap } from 'rxjs';
 import { IssueService } from '../../core/services/issue.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, IssueCommentComponent],
   selector: 'app-issue',
   standalone: true,

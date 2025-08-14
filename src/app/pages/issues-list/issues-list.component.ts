@@ -1,5 +1,5 @@
 // Angular.
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 // Componentes.
 import { IssueItemComponent } from '../../components/issue-item/issue-item.component';
@@ -12,6 +12,7 @@ import { State } from '../../core/models';
 import { IssuesService } from '../../core/services/issues.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [IssueItemComponent, LabelsSelectorComponent],
   selector: 'app-issues-list',
   standalone: true,
